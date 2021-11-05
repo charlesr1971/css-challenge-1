@@ -1,61 +1,127 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>CSS Challenge 1</title>
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS Challenge 1</title>
 
+    <script type="text/javascript"></script>
 
-<script type="text/javascript">
-	
-</script>
+    <style>
+      .speaker-container-outer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 390px;
+        height: 390px;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: #273a59;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 5px 20px,
+          rgba(0, 0, 0, 0.5) 0px 7px 20px;
+      }
 
-<style>
+      .speaker-ring-1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 320px;
+        height: 320px;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        border: 20px solid rgba(255, 255, 255, 0.15);
+				/*box-shadow: 0 0 60px 30px #fff, 0 0 100px 60px #f0f, 0 0 140px 90px #0ff;*/
+				box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5), inset 0 0 20px 0px rgba(0, 0, 0, 0.25);
+				/*animation: glow 5s infinite alternate;*/
+      }
+			
+			@keyframes glow {
+			  from {
+			    border-color: rgba(255, 255, 255, 0.15);
+			  }
+			  to {
+			    border-color: rgba(255, 255, 255, 0.75);
+			  }
+			}
 
-	.half-circle-1 {
-		position: relative;
-    width: 100px;
-    height: 200px;
-    border: 15px solid #5DBCF9;
-    border-left: 0;
-		border-bottom-right-radius: 115px;
-    border-top-right-radius: 115px;
-	}
-	
-	.half-circle-2 {
-		position: absolute;
-		top: 15px;
-    width: 70px;
-    height: 140px;
-    border: 15px solid #5DBCF9;
-    border-left: 0;
-		border-bottom-right-radius: 85px;
-    border-top-right-radius: 85px;
-	}
-	
-	.half-circle-3 {
-		position: absolute;
-		top: 15px;
-    width: 40px;
-    height: 80px;
-    border: 15px solid #5DBCF9;
-    border-left: 0;
-		border-bottom-right-radius: 55px;
-    border-top-right-radius: 55px;
-	}
-	
-</style>
+      .speaker-container-inner {
+        position: relative;
+        top: 75px;
+        left: 30px;
+        width: 320px;
+        height: 320px;
+        transform: scale(0.8);
+        transform-origin: 50% 50%;
+      }
 
+      .half-circle {
+        border: 15px solid #5dbcf9;
+        border-left: 0;
+      }
 
-</head>
+      .half-circle-1 {
+        position: relative;
+        top: 0;
+        left: 200px;
+        width: 100px;
+        height: 200px;
+        border-bottom-right-radius: 115px;
+        border-top-right-radius: 115px;
+      }
 
-<body>
-	
-	<div class="half-circle-1">
-		<div class="half-circle-2">
-			<div class="half-circle-3"></div>
-		</div>
-	</div>
-	
-	
-</body>
+      .half-circle-2 {
+        position: absolute;
+        top: 15px;
+        width: 70px;
+        height: 140px;
+        border-bottom-right-radius: 85px;
+        border-top-right-radius: 85px;
+      }
+
+      .half-circle-3 {
+        position: absolute;
+        top: 15px;
+        width: 40px;
+        height: 80px;
+        border-bottom-right-radius: 55px;
+        border-top-right-radius: 55px;
+      }
+
+      .speaker {
+        position: absolute;
+        top: 0px;
+        left: 30px;
+        width: 0;
+        height: 0;
+        border: 115px solid transparent;
+        border-left: 0;
+        border-right: 150px solid #5dbcf9;
+      }
+
+      .speaker-base {
+        position: absolute;
+        top: 75px;
+        left: 20px;
+        width: 80px;
+        height: 80px;
+        background: #5dbcf9;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="speaker-container-outer">
+      <div class="speaker-ring-1"></div>
+      <div class="speaker-container-inner">
+				
+        <div class="speaker-base"></div>
+        <div class="speaker"></div>
+
+        <div class="half-circle half-circle-1">
+          <div class="half-circle half-circle-2">
+            <div class="half-circle half-circle-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
